@@ -159,6 +159,8 @@ code {
     background: #FFFFFF;
 }
 
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+
 div.old_entry_warn {
     font-size: 90%;
     text-align: left;
