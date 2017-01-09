@@ -1,2 +1,3 @@
 # catalyst-hugo
-template for Hugo
+
+Template for Hugo
