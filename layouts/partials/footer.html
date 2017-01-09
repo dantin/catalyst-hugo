@@ -1,0 +1,20 @@
+  </div>
+  <div id="right" class="col-md-4">
+    <div id="sidebar">
+      <div id="about">
+        <img src="/img/dantin.jpg" alt="Catalyst Blog" />
+        <h4><a href="http://dding.info/">David Ding</a></h4>
+        <p>Software engineer.</p>
+      </div>
+      {{ partial "recent-posts.html" .Site.Pages }}
+      {{ partial "tag-cloud.html" . }}
+      {{ partial "categories.html" . }}
+      {{ partial "archives.html" .Site.RegularPages }}
+    </div>
+  </div>
+  <div id="footer" class="col-md-12">
+        <a href="http://dding.info">Catalyst</a> &copy; 2014 &#151; {{ .Now.Year }}
+    </div>
+  </div>
+</body>
+</html>
