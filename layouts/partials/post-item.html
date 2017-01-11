@@ -1,0 +1,10 @@
+<!-- Blog Post Item -->
+<h2>
+  <a title="{{ .Title }}" href="{{ .Permalink }}">{{ .Title }}</a>
+</h2>
+<p><span class="glyphicon glyphicon-time"></span> Posted on {{ .Date.Format "January 02, 2006" }}</p>
+<hr>
+<p>{{ .Params.description }}</p>
+<a class="btn btn-primary" href="{{ .Permalink }}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+<hr>

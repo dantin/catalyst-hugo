@@ -1,9 +1,41 @@
-{{ partial "header.html" . }}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  {{ partial "header.html" . }}
+</head>
+<body>
+  {{ partial "navigation.html" . }}
 
-{{ range (.Paginator 10).Pages }}
-    {{ partial "post-brief.html" . }}
-{{ end }}
+  <!-- Page Content -->
+  <div id="content" class="container">
+    <div class="row">
+      <!-- Blog Entries Column -->
+      <div id="left" class="col-md-8">
+        <h1 class="page-header">
+          Catalyst
+          <small>这世界是美好的，值得我们为之奋斗。我只相信后半句。</small>
+        </h1>
 
-{{ partial "pagination.html" . }}
+        {{ range (.Paginator 10).Pages }}
+            {{ partial "post-item.html" . }}
+        {{ end }}
 
-{{ partial "footer.html" . }}
+        {{ partial "pagination.html" . }}
+      </div>
+
+      <!-- Blog Sidebar Widgets Column -->
+      <div id="right" class="col-md-4">
+        {{ partial "sidebar.html" . }}
+      </div>
+    </div>
+    <!-- /.row-->
+    <hr>
+
+    {{ partial "footer.html" . }}
+
+  </div>
+  <!-- /.container -->
+
+  {{ partial "scripts.html" . }}
+</body>
+</html>
