@@ -6,9 +6,9 @@
         <h4><a href="http://dding.info/">David Ding</a></h4>
         <p>Software engineer.</p>
       </div>
-      {{ partial "recent-posts.html" .Site.Pages }}
-      {{ partial "tag-cloud.html" . }}
       {{ partial "categories.html" . }}
+      {{ partial "tag-cloud.html" . }}
+      {{ partial "recent-posts.html" .Site.Pages }}
       {{ partial "archives.html" .Site.RegularPages }}
     </div>
   </div>
@@ -46,5 +46,8 @@ MathJax.Hub.Config({
     }
 });
 </script>
+
+{{ partial "site-tracking.html" . }}
+
 </body>
 </html>
