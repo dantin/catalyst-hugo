@@ -1,29 +1,29 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-type" content="text/html;charset=utf-8" >
-  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" >
-  <meta name="robots" content="index, follow" />
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta http-equiv="content-language" content="en" />
-  <meta name="author" content="David Ding" />
-  <meta name="copyright" content="copyright (c) 2017 by David Ding" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<!-- old: <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> -->
+<meta http-equiv="content-language" content="zh-CN" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>
-    {{ .Site.Title }} {{ if .IsPage }} {{ if .Title }} :: {{ .Title }} {{ end }} {{ end }}
-  </title>
+<meta name="robots" content="index, follow" />
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta name="author" content="David Ding" />
+<meta name="copyright" content="copyright (c) 2017 by David Ding" />
 
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<title>
+  {{ .Site.Title }} {{ if .IsPage }} {{ if .Title }} :: {{ .Title }} {{ end }} {{ end }}
+</title>
 
-  <link rel="stylesheet" href="/css/all.css" type="text/css" />
+<!-- Icon -->
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<!-- Bootstrap Core CSS -->
+<link href="/bootstrap3/css/bootstrap.min.css" rel="stylesheet">
 
-  
-</head>
+<!-- Custom CSS -->
+<link href="/css/catalyst.css" rel="stylesheet">
 
-<body>
-  <div id="page" class="col-md-8">
-    <div id="top" class="col-md-12">
-      <h1><a href="/blog/">Catalyst Blog</a></h1>
-    </div>
-    <div id="left" class="col-md-8">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->

@@ -14,24 +14,47 @@
     {{ $.Scratch.Set "last" false }}
 {{ end }}
 
-<div class="navigation">
+<!-- Pager -->
+<nav aria-label="Page navigation">
+  <ul class="pagination">
     {{ if .Paginator.HasPrev }}
-        <a href="{{ $cu }}/page/{{ sub $cp 1 }}/"> Prev </a>
+      <li>
+        <a href="{{ $cu }}/page/{{ sub $cp 1 }}/" aria-label="Previous"><span aria-hidden="true">Prev</span></a>
+      </li>
     {{ end }}
 
     {{ if (not ($.Scratch.Get "first")) }}
-        <a href="{{ $cu }}" {{ if eq $cp 1 }}class="current"{{ end }}> 1 </a> <span>...</span>
+      <li {{ if eq $cp 1 }}class="active"{{ end }}>
+        <a href="{{ $cu }}" > 1 </a>
+      </li>
+      <li class="disabled">
+        <span>
+          <span aria-hidden="true">...</span>
+        </span>
+      </li>
     {{ end }}
 
     {{ range $.Scratch.Get "p" }}
-        <a href="{{ $cu }}/page/{{ .PageNumber }}/" {{ if eq $cp .PageNumber }}class="current"{{ end }}> {{ .PageNumber }} </a>
+      <li {{ if eq $cp .PageNumber }}class="active"{{ end }}>
+        <a href={{ if eq $cp .PageNumber }}"#"{{ else }}"{{ $cu }}/page/{{ .PageNumber }}/"{{ end }}> {{ .PageNumber }} {{ if eq $cp .PageNumber }}<span class="sr-only">(current)</span>{{ end }}</a>
+      </li>
     {{ end }}
 
     {{ if (not ($.Scratch.Get "last")) }}
-        <span>...</span> <a href="{{ $cu }}/page/{{ .Paginator.TotalPages }}/" {{ if eq $cp .Paginator.TotalPages }}class="current"{{ end }}> {{ .Paginator.TotalPages }} </a>
+      <li class="disabled">
+        <span>
+          <span aria-hidden="true">...</span>
+        </span>
+      </li>
+      <li {{ if eq $cp .Paginator.TotalPages }}class="active"{{ end }}>
+        <a href="{{ $cu }}/page/{{ .Paginator.TotalPages }}/"> {{ .Paginator.TotalPages }} </a>
+      </li>
     {{ end }}
 
     {{ if .Paginator.HasNext }}
-        <a href="{{ $cu }}/page/{{ add $cp 1 }}/"> Next </a>
+      <li>
+        <a href="{{ $cu }}/page/{{ add $cp 1 }}/" aria-label="Previous"><span aria-hidden="true"> Next </span></a>
+      </li>
     {{ end }}
-</div>
+  </ul>
+</nav>

@@ -1,0 +1,9 @@
+<!-- Blog Categories Well -->
+<div class="well">
+  <h4><span class="glyphicon glyphicon-folder-open"></span> 分类</h4>
+  <ul class="list-unstyled">
+    {{ range $cat, $tax := .Site.Taxonomies.categories }}
+      <li><a href="/categories/{{ $cat | urlize }}">{{ replace $cat "-" " " | title }}</a></li>
+    {{ end }}
+  </ul>
+</div>
