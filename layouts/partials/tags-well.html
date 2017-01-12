@@ -1,0 +1,17 @@
+<!-- Blog Tags Well -->
+<div class="well">
+  <h4><span class="glyphicon glyphicon-tags"></span> 标签</h4>
+  <p>
+    {{ range $index, $tag := .Site.Taxonomies.tags.ByCount }}
+      {{ if lt $index 40 }}
+        {{ if lt $index 8 }}
+          {{ $fontSize := sub 20 $index }}
+          <span style="font-size: {{ $fontSize }}px;">
+        {{ else }}
+          <span style="font-size: 12px;">
+        {{ end }}
+            <a href="/tags/{{ $tag.Name | urlize }}">{{ $tag.Name }}</a></span>
+      {{ end }}
+    {{ end }}
+  </p>
+</div>
