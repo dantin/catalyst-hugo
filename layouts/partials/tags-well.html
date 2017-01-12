@@ -10,7 +10,7 @@
         {{ else }}
           <span style="font-size: 12px;">
         {{ end }}
-            <a href="/tags/{{ $tag.Name | urlize }}">{{ $tag.Name }}</a></span>
+            <a href="/tags/{{ $tag.Name | urlize }}">{{ replace $tag.Name "-" " " }}</a></span>
       {{ end }}
     {{ end }}
   </p>
