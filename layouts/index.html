@@ -1,31 +1,67 @@
-{{ partial "header.html" . }}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  {{ partial "header.html" . }}
+</head>
+<body>
+  {{ partial "navigation.html" . }}
 
-<h1>Hi!</h1>
+  <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+                <h1 style="background-color:rgba(0,0,0,0);color: #FFFFFF;">Catalyst</h1>
+                <h3 style="background-color:rgba(0,0,0,0);color: #DCDCDC;">"The World is a Fine Place and Worth Fighting for." - I agree with the second part.</h3>
+            </div>
+        </div>
+    </header>
 
-<p>
-This David Ding's personal website, he is a software engineer who focus on Java, Python, Golang, and specialized in backend applications while having experience in leading developer teams and doing code reviews.
-</p>
+    <!-- Page Content -->
+    <div class="container">
 
-<p>
-In his spare time, he likes writing blog, <a href='https://book.douban.com/people/13135696/'>reading books</a>, learning data structure and algorithms, and doing physical exercise.
-</p>
+        <hr class="featurette-divider">
 
-<p>
-He loves creating software and is thrilled to be able to work on it full time. When not coding, he is usually having fun outdoors with his wife and child.</p>
+        <!-- First Featurette -->
+        <div class="featurette" id="about">
+            <img class="featurette-image img-circle img-responsive pull-right" src="/img/500x500.jpg">
+            <h2 class="featurette-heading">About Site
+                <!-- <span class="text-muted">Keep perfect</span> -->
+            </h2>
+            <p class="lead">This is a personal website, I made it for fun. It is a place to keep some notes as I learning, growing, and interacting with other people.</p>
+            <p>In this site, you can see:</p>
+            <ul>
+                <li>Programming Language, such as Java, Python and Golang</li>
+                <li>Open Source, and Technology solution</li>
+                <li>Mathmatical issue I met in my working carrer</li>
+                <li>Leetcode solutions I solve in my spare time</li>
+            </ul>
+        </div>
 
-<p>
-My contact details:
-</p>
+        <hr class="featurette-divider">
 
-<dl id="my_contact">
-    <dt>Name:</dt>
-    <dd>David Ding</dd>
-    <dt>Github:</dt>
-    <dd><a href="https://github.com/dantin">View my profile</a></dd>
-    <dt>Twitter:</dt>
-    <dd><a href="https://twitter.com/ChengjieDing">Follow me</a></dd>
-    <dt>LinkedIn:</dt>
-    <dd><a href="https://cn.linkedin.com/in/david-ding-61384193">View my profile</a></dd>
-</dl>
+        <!-- Second Featurette -->
+        <div class="featurette" id="services">
+            <img class="featurette-image img-circle img-responsive pull-left" src="/img/bike500x500.jpg">
+            <h2 class="featurette-heading">About Author
+                <!-- <span class="text-muted">Is Pretty Cool Too.</span> -->
+            </h2>
+            <p class="lead">This site is made by <a href="">David Ding</a>, who is a software engineer focus on Java, Python, Golang, he is specialized in backend applications while having experience in leading developer teams and doing code reviews.</p>
+            
+            <p>In spare time, he likes writing <a href="/blog/">blogs</a>, <a href='https://book.douban.com/people/13135696/'>reading books</a>, learning data structure and algorithms, and doing physical exercise.
+            </p>
 
-{{ partial "footer.html" . }}
+            <p>He loves creating software and is thrilled to be able to work on it full time. When not coding, he is usually having fun outdoors with his wife and child.</p>
+
+            <p>
+        </div>
+
+        <hr class="featurette-divider">
+
+    {{ partial "footer.html" . }}
+
+  </div>
+  <!-- /.container -->
+
+  {{ partial "scripts.html" . }}
+</body>
+</html>
