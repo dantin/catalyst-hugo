@@ -1,0 +1,9 @@
+<!-- Recent Post Well -->
+<div class="well">
+  <h4><span class="glyphicon glyphicon-file"></span>&nbsp; 最新文章</h4>
+  <ul class="list-unstyled">
+    {{ range first 10 . }}
+      <li><a href="{{ .Permalink }}"> {{ .Title }} </a></li>
+    {{ end }}
+  </ul>
+</div>
