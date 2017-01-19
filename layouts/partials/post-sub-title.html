@@ -1,5 +1,7 @@
 <p>
+{{ if (and (.Params.categories) (.Params.tags)) }}
 <span class="glyphicon glyphicon-time"></span> Posted on {{ .Date.Format "January 02, 2006" }}&nbsp;
+{{ end}}
 {{ with .Params.categories }}
 </p>
 <p>
